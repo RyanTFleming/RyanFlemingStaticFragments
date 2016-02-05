@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Enter 2 numbers"
+        android:text="@string/data_entry_message"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
@@ -34,7 +34,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MULTIPLY"
+        android:text="@string/button_multiply"
         android:id="@+id/button"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">RyanFlemingStaticFragments</string>
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="data_entry_message">Enter 2 numbers</string>
+    <string name="button_multiply">MULTIPLY</string>
+    <string name="button_add">ADD</string>
+    <string name="data_display_default">0</string>
 </resources>
