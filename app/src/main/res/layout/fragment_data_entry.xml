@@ -7,4 +7,34 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Enter 2 numbers"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MULTIPLY"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
