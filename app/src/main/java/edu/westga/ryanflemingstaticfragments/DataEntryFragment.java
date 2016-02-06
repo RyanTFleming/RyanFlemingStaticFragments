@@ -19,7 +19,7 @@ public class DataEntryFragment extends Fragment {
 
     private TextView number1Text;
     private TextView number2Text;
-    public static interface DataEntryListener {
+    public interface DataEntryListener {
         void onDataEntry(double number1, double number2);
     }
     private DataEntryListener listener;
@@ -31,9 +31,9 @@ public class DataEntryFragment extends Fragment {
     /**
      * called when the view is created.
      *
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
+     * @param inflater inflater
+     * @param container container
+     * @param savedInstanceState state
      * @return theView
      */
     @Override

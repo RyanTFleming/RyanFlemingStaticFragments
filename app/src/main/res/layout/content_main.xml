@@ -27,4 +27,12 @@
         android:name="edu.westga.ryanflemingstaticfragments.DataDisplayFragment"
         android:id="@+id/dataDisplayFragment"
         tools:layout="@layout/fragment_data_display" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="edu.westga.ryanflemingstaticfragments.DataAddFragment"
+        android:id="@+id/dataAddFragment"
+        android:layout_gravity="center_horizontal"
+        tools:layout="@layout/fragment_data_add" />
 </LinearLayout>

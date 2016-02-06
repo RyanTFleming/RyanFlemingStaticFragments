@@ -5,4 +5,5 @@
     <string name="button_multiply">MULTIPLY</string>
     <string name="button_add">ADD</string>
     <string name="data_display_default">0</string>
+
 </resources>

@@ -1,11 +1,13 @@
 package edu.westga.ryanflemingstaticfragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -19,6 +21,12 @@ public class DataDisplayFragment extends Fragment {
     private double number2;
     private double product;
 
+    public interface DataAddListener {
+        void onDataAdd(double number1, double number2);
+    }
+    private DataAddListener listener;
+
+
     public DataDisplayFragment() {
         // Required empty public constructor
     }
@@ -28,7 +36,25 @@ public class DataDisplayFragment extends Fragment {
                              Bundle savedInstanceState) {
         View theView = inflater.inflate(R.layout.fragment_data_display, container, false);
         this.displayProductTextView = (TextView) theView.findViewById(R.id.textView2);
+
+        Button addButton = (Button) theView.findViewById(R.id.button2);
+        addButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                addButtonClicked(view);
+            }
+        });
         return theView;
+    }
+
+    /**
+     * action performed when the button is clicked
+     *
+     * @param view - the button
+     */
+    private void addButtonClicked(View view) {
+        this.listener.onDataAdd(this.number1, this.number2);
     }
 
     /**
@@ -60,5 +86,11 @@ public class DataDisplayFragment extends Fragment {
      */
     public void displayProduct() {
         this.displayProductTextView.setText(String.valueOf(this.product));
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (DataAddListener) context;
     }
 }

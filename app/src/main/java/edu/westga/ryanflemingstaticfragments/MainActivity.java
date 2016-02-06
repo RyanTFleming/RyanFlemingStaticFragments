@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements DataEntryFragment.DataEntryListener {
+public class MainActivity extends AppCompatActivity implements DataEntryFragment.DataEntryListener, DataDisplayFragment.DataAddListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +62,20 @@ public class MainActivity extends AppCompatActivity implements DataEntryFragment
         displayFragment.setNumber2(number2);
         displayFragment.multiply();
         displayFragment.displayProduct();
+    }
+
+    /**
+     * Adds the numbers entered in the DataEntryFragment and
+     * and sets its value to the AddFragment
+     * @param number1 - the first number
+     * @param number2 - the second number
+     */
+    @Override
+    public void onDataAdd(double number1, double number2) {
+        DataAddFragment addFragment = (DataAddFragment) getSupportFragmentManager().findFragmentById(R.id.dataAddFragment);
+        addFragment.setNumber1(number1);
+        addFragment.setNumber2(number2);
+        addFragment.add();
+        addFragment.displaySum();
     }
 }
