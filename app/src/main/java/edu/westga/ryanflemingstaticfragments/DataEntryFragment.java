@@ -1,6 +1,7 @@
 package edu.westga.ryanflemingstaticfragments;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -58,9 +59,19 @@ public class DataEntryFragment extends Fragment {
      * @param view - the button
      */
     private void multiplyButtonClicked(View view) {
-        double number1 = Double.parseDouble(this.number1Text.getText().toString());
-        double number2 = Double.parseDouble((this.number2Text.getText().toString()));
-        this.listener.onDataEntry(number1, number2);
+        try {
+            double number1 = Double.parseDouble(this.number1Text.getText().toString());
+            double number2 = Double.parseDouble((this.number2Text.getText().toString()));
+            this.listener.onDataEntry(number1, number2);
+        } catch (NumberFormatException nfe) {
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this.getContext());
+            dlgAlert.setMessage("You must enter 2 valid numbers");
+            dlgAlert.setTitle("Invalid input");
+            dlgAlert.setPositiveButton("OK", null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+        }
+
     }
 
     /**
